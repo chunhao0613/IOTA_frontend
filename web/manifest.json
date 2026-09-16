@@ -1,11 +1,11 @@
 {
-    "name": "my_app",
-    "short_name": "my_app",
+    "name": "IOTA 智慧鎖",
+    "short_name": "IOTA",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#0F172A",
+    "theme_color": "#8B5CF6",
+    "description": "IOTA 智慧鎖行動應用程式 — 家庭/場域管理、裝置配對與遠端控制前端。",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

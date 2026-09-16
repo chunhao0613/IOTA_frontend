@@ -1,5 +1,5 @@
 name: my_app
-description: "A new Flutter project."
+description: "IOTA 智慧鎖行動應用程式 — 家庭/場域管理、裝置配對與遠端控制前端。"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -18,8 +18,12 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # of the product and file versions while build-number is used as the build suffix.
 version: 1.0.0+1
 
+# 加入 shared_preferences 後，解析出來的相依集合需要 Dart 3.12 / Flutter 3.44
+# （見 pubspec.lock 的 sdks 區段）。這裡如實宣告，讓版本不符的環境直接得到
+# 明確的錯誤訊息，而不是一串看不懂的 version solving 失敗。
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.12.0
+  flutter: ">=3.44.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -36,6 +40,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   http: ^1.2.1
+  shared_preferences: ^2.5.5
+  qr_flutter: ^4.1.0
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +53,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

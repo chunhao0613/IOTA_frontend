@@ -1,8 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 呼叫後端 API 必須有 INTERNET 權限。
+         原本只有 debug/ 與 profile/ 的 manifest 有這一行（那是 Flutter 為了
+         hot reload 自動加的），main/ 沒有 —— 也就是 release 版建置出來的 App
+         完全沒有網路能力，所有 API 呼叫都會失敗。 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 用來在連線失敗時區分「沒網路」與「伺服器沒開」。 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
-        android:label="my_app"
+        android:label="IOTA 智慧鎖"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:networkSecurityConfig="@xml/network_security_config">
         <activity
             android:name=".MainActivity"
             android:exported="true"
